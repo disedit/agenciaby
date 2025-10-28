@@ -1,0 +1,11 @@
+.to-underlined:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.prose {
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}

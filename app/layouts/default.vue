@@ -19,10 +19,8 @@ useHead({
 <template>
   <div>
     <NuxtLoadingIndicator color="#000" />
-    <SiteNav />
-    <main>
-      <slot />
-    </main>
+    <slot />
     <SiteFooter />
+    <SiteLoader />
   </div>
 </template>

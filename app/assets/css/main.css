@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: sans-serif;
+  --font-sans: Pretendard, sans-serif;
   --color-black: #000;
-  --color-white: #f1f0eb;
-  --text-sm: clamp(0.8rem, 0.08vi + 0.78rem, 0.84rem);
-  --text-base: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
-  --text-md: clamp(1.19rem, 0.43vi + 1.11rem, 1.44rem);
-  --text-lg: clamp(1.56rem, 0.79vi + 1.36rem, 2rem);
-  --text-xl: clamp(1.95rem, 1.29vi + 1.63rem, 2.66rem);
-  --text-2xl: clamp(2.44rem, 2.02vi + 1.94rem, 3.55rem);
-  --text-3xl: clamp(3.05rem, 3.06vi + 2.29rem, 4.73rem);
-  --text-4xl: clamp(3.5rem, 4.54vi + 2.68rem, 6.31rem);
-  --text-5xl: clamp(3rem, 5vi + .25rem, 7.6rem);
-  --spacing-site: 1.5rem;
+  --color-white: #fff;
+  --color-gray: #F0F0F0;
+  --color-gray-dark: #3E3E3E;
+  --color-beige: #BCBCB5;
+  --text-xs: clamp(0.6rem, 0.06vi + 0.58rem, 0.63rem);
+  --text-sm: clamp(0.85rem, 0.22vi + 0.78rem, 0.88rem);
+  --text-base: clamp(0.94rem, 0.34vi + 0.85rem, 1.13rem);
+  --text-md: clamp(1.17rem, 0.6vi + 1.02rem, 1.5rem);
+  --text-lg: clamp(1.46rem, 0.97vi + 1.22rem, 2rem);
+  --text-xl: clamp(1.83rem, 1.52vi + 1.45rem, 2.66rem);
+  --text-2xl: clamp(2.29rem, 2.3vi + 1.71rem, 3.55rem);
+  --text-3xl: clamp(2.86rem, 3.41vi + 2.01rem, 4.73rem);
+  --spacing-site: 2.75rem;
+  --spacing-nav: 4.695rem;
   --color-lime-*: initial;
   --color-red-*: initial;
   --color-yellow-*: initial;
@@ -32,11 +35,21 @@
   --color-pink-*: initial;
   --color-rose-*: initial;
   --color-slate-*: initial;
-  --color-gray-*: initial;
   --color-stone-*: initial;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media (max-width: 640px) {
+  :root {
+      --text-xxs: 0.625rem;
+      --text-xs: 0.6875rem;
+      --text-sm: 0.75rem;
+      --text-base: 0.937rem;
+      --text-md: 20px;
+      --text-lg: 37px;
+  }
 }
+
+@import "./fonts.css";
+@import "./base.css";
+@import "./utils.css";
+@import "./transitions.css";
