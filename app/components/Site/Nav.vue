@@ -37,4 +37,5 @@ function toggleMenu() {
     </button>
   </header>
   <SiteMenu :scheme="scheme" :open="menuOpen" @close="menuOpen = false" />
+  <div class="h-nav" />
 </template>

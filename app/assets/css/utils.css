@@ -14,4 +14,13 @@
     text-decoration: underline;
     text-underline-offset: 0.2em;
   }
+
+  &.spaced-paragraphs p:not(:last-child) {
+    margin-bottom: .75em;
+  }
+}
+
+.column .self-end {
+  margin-block-start: auto;
+  align-self: auto;
 }

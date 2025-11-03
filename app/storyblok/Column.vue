@@ -3,12 +3,11 @@ defineProps({ blok: Object })
 </script>
 
 <template>
-  <main class="bg-gray min-h-[100svh]">
-    <SiteNav :top-message="blok.top_message || blok.title" />
+  <div class="column flex flex-col gap-4" v-editable="block">
     <StoryblokComponent
-      v-for="component in blok.body"
+      v-for="component in blok.blocks"
       :key="component._uid"
       :blok="component"
     />
-  </main>
+  </div>
 </template>
