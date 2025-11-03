@@ -2,7 +2,7 @@
 .links-to-underlined a:hover,
 .links-underlined a {
   text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.25em;
 }
 
 .links-underlined a:hover {
@@ -12,7 +12,7 @@
 .prose {
   a:hover {
     text-decoration: underline;
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.25em;
   }
 
   &.spaced-paragraphs p:not(:last-child) {
