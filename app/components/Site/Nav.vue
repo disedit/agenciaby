@@ -16,7 +16,7 @@ function toggleMenu() {
 <template>
   <header
     :class="[
-      'absolute top-0 left-0 right-0 px-site py-6 text-base z-500',
+      'absolute top-0 left-0 right-0 px-site py-5 md:py-6 text-xxs md:text-base z-500',
       'flex justify-between items-center',
       {
         'text-white': scheme === 'dark',
@@ -26,7 +26,7 @@ function toggleMenu() {
     <NuxtLink to="/" class="to-underlined">
       BÝ
     </NuxtLink>
-    <div>
+    <div class="absolute left-[50%] -translate-x-[50%] md:translate-x-0 md:static">
       {{ topMessage }}
     </div>
     <button

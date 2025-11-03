@@ -1,6 +1,12 @@
-.to-underlined:hover {
+.to-underlined:hover,
+.links-to-underlined a:hover,
+.links-underlined a {
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+
+.links-underlined a:hover {
+  opacity: .5;
 }
 
 .prose {

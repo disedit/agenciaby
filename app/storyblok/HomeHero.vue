@@ -10,9 +10,9 @@ defineProps({ blok: Object })
       'bg-white text-black': blok.scheme === 'light',
     }
   ]">
-    <h1 class="text-2xl my-auto">
+    <h1 class="text-[1.07rem] md:text-2xl my-auto">
       {{ blok.heading }}
     </h1>
-    <UtilsRichText :content="blok.bottom" class="text-base" />
+    <UtilsRichText :content="blok.bottom" class="text-xxs md:text-base" />
   </header>
 </template>

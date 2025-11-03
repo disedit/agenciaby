@@ -24,10 +24,10 @@
         >
           <NuxtLink
             :to="internalLink(item.link)"
-            class="block py-2"
+            class="block py-1 md:py-2"
             @click="emit('close')"
           >
-            <span v-if="global.menu_include_numbers" class="me-4">
+            <span v-if="global.menu_include_numbers" class="text-xs md:text-base me-4">
               [ {{  i+1 }} ]
             </span>
             <span class="text-3xl">
@@ -37,7 +37,7 @@
         </li>
       </ul>
 
-      <UtilsRichText :content="global.menu_contact_text" class="mt-16" />
+      <UtilsRichText :content="global.menu_contact_text" class="mt-8 md:mt-16" />
     </div>
   </Transition>
 </template>
