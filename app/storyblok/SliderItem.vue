@@ -1,18 +1,14 @@
 <script setup>
 const props = defineProps({ blok: Object })
 const { internalLink } = useLinks()
-const tag = computed(() => {
-  return resolveComponent('NuxtLink')
-})
+const tag = computed(() => props.blok.link ? resolveComponent('NuxtLink') : 'article')
 </script>
 
 <template>
   <Component
     :is="tag"
-    :to="internalLink(blok.link)"
-    :class="[
-      'carousel__item group flex flex-col gap-3',
-    ]"
+    :to="tag !== 'article' ? internalLink(blok.link) : null"
+    class="'carousel__item group flex flex-col gap-3"
   >
     <UtilsMedia
       :media="blok.media"

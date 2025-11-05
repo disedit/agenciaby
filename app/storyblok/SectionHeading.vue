@@ -2,7 +2,7 @@
 const props = defineProps({ blok: Object })
 const { internalLink } = useLinks()
 const hTag = computed(() => `h${props.blok.h_level}`)
-const linkTag = computed(() => resolveComponent('NuxtLink'))
+const linkTag = computed(() => props.blok.link ? resolveComponent('NuxtLink') : 'div')
 </script>
 
 <template>
@@ -13,8 +13,8 @@ const linkTag = computed(() => resolveComponent('NuxtLink'))
   >
     <Component
       :is="linkTag"
-      :to="internalLink(blok.link)"
-      class="span-to-underlined"
+      :to="linkTag !== 'div' ? internalLink(blok.link) : null"
+      :class="{ 'span-to-underlined': linkTag !== 'div' }"
     >
       <span>{{ blok.heading }}</span> -&gt;
     </Component>
