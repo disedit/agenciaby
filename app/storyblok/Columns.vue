@@ -12,7 +12,7 @@ defineProps({ blok: Object })
         'grid-cols-2': blok.columns === '2',
         'grid-cols-3': blok.columns === '3',
         'gap-6': blok.gap,
-        'px-site py-22': blok.padding,
+        'px-site my-22': blok.padding,
         'bg-white': blok.background_color === 'white',
         'bg-gray': blok.background_color === 'gray',
         'bg-black text-white': blok.background_color === 'black',

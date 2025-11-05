@@ -6,14 +6,21 @@ defineProps({ blok: Object })
   <section
     v-editable="blok"
     :class="[
+      'flex flex-col',
       {
         'bg-white': blok.background_color === 'white',
         'bg-gray': blok.background_color === 'gray',
         'bg-black text-white': blok.background_color === 'black',
-        'px-site py-22': blok.padding
+        'px-site my-22': blok.padding,
+        'gap-8': blok.gap,
       }
     ]"
   >
+    <StoryblokComponent
+      v-for="component in blok.heading"
+      :key="component._uid"
+      :blok="component"
+    />
     <StoryblokComponent
       v-for="component in blok.blocks"
       :key="component._uid"

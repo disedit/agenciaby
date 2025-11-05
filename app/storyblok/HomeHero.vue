@@ -10,7 +10,7 @@ const heroLoaded = ref(false)
     :class="[
       'relative overflow-clip min-h-svh flex justify-center items-center flex-col px-site py-6 -mt-nav',
       {
-        'bg-black text-white': blok.scheme === 'dark',
+        'bg-black text-white focus-dark selection-dark': blok.scheme === 'dark',
         'bg-white text-black': blok.scheme === 'light',
       }
   ]">

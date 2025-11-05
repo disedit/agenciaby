@@ -1,4 +1,17 @@
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *:focus-visible {
+    outline: var(--border-width) solid var(--color-focus-background, var(--color-black));
+    background: var(--color-focus-background, var(--color-black));
+    color: var(--color-focus-foreground, var(--color-white));
+  }
+
+  ::selection {
+    color: var(--color-selection-foreground, var(--color-white));
+    background-color: var(--color-selection-background, var(--color-black));
+  }
 }

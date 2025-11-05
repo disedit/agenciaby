@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'vue3-carousel/carousel.css';
 
 @theme {
   --font-sans: Pretendard, sans-serif;
@@ -12,6 +13,7 @@
   --text-xs: clamp(0.6rem, 0.06vi + 0.58rem, 0.63rem);
   --text-sm: clamp(0.85rem, 0.22vi + 0.78rem, 0.88rem);
   --text-base: clamp(0.94rem, 0.34vi + 0.85rem, 1.13rem);
+  --text-bmx: clamp(1rem, 0.44vi + 0.9rem, 1.28rem);
   --text-md: clamp(1.17rem, 0.55vi + 1rem, 1.45rem);
   --text-lg: clamp(1.46rem, 0.97vi + 1.22rem, 2rem);
   --text-xl: clamp(1.83rem, 1.52vi + 1.45rem, 2.66rem);
@@ -20,6 +22,7 @@
 
   --spacing-site: 2.75rem;
   --spacing-nav: 4.695rem;
+  --border-width: 2px;
 
   --color-lime-*: initial;
   --color-red-*: initial;

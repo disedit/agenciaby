@@ -1,26 +1,36 @@
-.to-underlined:hover,
-.links-to-underlined a:hover,
-.links-underlined a {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
-}
-
-.links-underlined a:hover {
-  opacity: .5;
-}
-
-.prose {
-  a:hover {
+@layer utilities {
+  .to-underlined:hover,
+  .links-to-underlined a:hover,
+  .links-underlined a,
+  .span-to-underlined:hover span,
+  .prose a:hover {
     text-decoration: underline;
     text-underline-offset: 0.25em;
+    text-decoration-thickness: 1.5px;
   }
 
-  &.spaced-paragraphs p:not(:last-child) {
-    margin-bottom: .75em;
+  .links-underlined a:hover {
+    opacity: .5;
   }
-}
 
-.column .self-end {
-  margin-block-start: auto;
-  align-self: auto;
+  .prose {
+    &.spaced-paragraphs p:not(:last-child) {
+      margin-bottom: .75em;
+    }
+  }
+
+  .column .self-end {
+    margin-block-start: auto;
+    align-self: auto;
+  }
+
+  .focus-dark {
+    --color-focus-background: var(--color-white);
+    --color-focus-foreground: var(--color-black);
+  }
+
+  .selection-dark {
+    --color-selection-background: var(--color-white);
+    --color-selection-foreground: var(--color-black);
+  }
 }

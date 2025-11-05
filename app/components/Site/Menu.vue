@@ -12,7 +12,7 @@
         'fixed inset-0 z-100 backdrop-blur-none',
         'flex flex-col items-end justify-center px-site pt-nav pb-6 text-right text-base',
         {
-          'bg-gray-dark/50 text-white': scheme === 'dark',
+          'bg-gray-dark/50 text-white focus-dark selection-dark': scheme === 'dark',
           'bg-gray/50 text-black': scheme === 'light',
         }
       ]"
