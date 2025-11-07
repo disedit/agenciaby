@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  htmlAttrs: { lang: 'es-ES', class: 'font-sans' },
+  htmlAttrs: { lang: 'es-ES', class: 'bg-gray font-sans' },
   meta: [
     { name: 'theme-color', content: '#f1f0eb' },
     { name: 'msapplication-TileColor', content: '#f1f0eb' },

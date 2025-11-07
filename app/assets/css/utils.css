@@ -1,4 +1,5 @@
 @layer utilities {
+  .underlined,
   .to-underlined:hover,
   .links-to-underlined a:hover,
   .links-underlined a,

@@ -1,5 +1,5 @@
 <template>
-  <footer class="px-site py-5 md:py-6 text-xs md:text-md">
+  <footer class="bg-white px-site py-5 md:py-6 text-xs md:text-md">
     <div class="grid gap-10 md:gap-site grid-cols-2 md:grid-cols-[14rem_1fr_auto] leading-relaxed">
       <div class="text-md col-span-2 md:col-span-1">
         {{ global.footer_brand }}
