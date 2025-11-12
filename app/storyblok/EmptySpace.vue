@@ -3,5 +3,8 @@ const props = defineProps({ blok: Object })
 </script>
 
 <template>
-  <UtilsCard :card="blok" />
+  <div
+    v-editable="blok"
+    class="empty-space"
+  />
 </template>

@@ -7,7 +7,7 @@ defineProps({ blok: Object })
     v-editable="blok"
     :media="blok.media"
     :class="[
-      'media w-full',
+      'w-full',
       {
         'h-[90svh] object-cover': blok.fit_viewport,
       }
