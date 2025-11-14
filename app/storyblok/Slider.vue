@@ -8,7 +8,40 @@ const carouselConfig = {
   gap: props.blok.gap ? 24 : false
 }
 
-const items = computed(() => props.blok.items)
+const version = useEnvironment()
+const storyblokApi = useStoryblokApi()
+const { data: projects } = await useAsyncData(
+  'projects_' + props.blok._uid,
+  async () => {
+    if (!props.blok.prepopulate_with) {
+      return []
+    }
+
+    return await storyblokApi.get(`cdn/stories`, {
+      version,
+      excluding_fields: 'body',
+      starts_with: `proyectos/`,
+      sort_by: 'sort_by_date:desc,content.name:asc',
+      is_startpage: false,
+      per_page: 8
+    })
+  }
+)
+
+const items = computed(() => {
+  if (props.blok.prepopulate_with) {
+    return projects.value.data.stories.map(item => ({
+      '_uid': item.uuid,
+      component: 'SliderItem',
+      heading: item.content.title,
+      description: item.content.description,
+      media: item.content.thumbnail,
+      link: item.full_slug
+    }))
+  }
+
+  return props.blok.items
+})
 </script>
 
 <template>

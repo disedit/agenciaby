@@ -17,7 +17,7 @@ const toggleDescription = (desc, uid) => {
 </script>
 
 <template>
-  <article class="border-t border-gray-border grid md:grid-cols-2 gap-6 py-site">
+  <article v-editable="blok" class="border-t border-gray-border grid md:grid-cols-2 gap-6 py-site">
     <div class="flex gap-site">
       <div>
         {{ blok.letter }}

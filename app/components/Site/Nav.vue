@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-defineProps<{
-  topMessage?: string
+const props = defineProps<{
+  topMessage?: string,
+  topLink?: string
 }>()
 
 const route = useRoute()
@@ -11,6 +12,8 @@ const menuOpen = ref(false)
 function toggleMenu() {
   menuOpen.value = !menuOpen.value
 }
+
+const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'div')
 </script>
 
 <template>
@@ -26,9 +29,9 @@ function toggleMenu() {
     <NuxtLink to="/" class="to-underlined">
       BÝ
     </NuxtLink>
-    <div class="absolute left-[50%] -translate-x-[50%] md:translate-x-0 md:static">
+    <Component :is="topTag" :to="topLink" class="absolute left-[50%] -translate-x-[50%] md:translate-x-0 md:static">
       {{ topMessage }}
-    </div>
+    </Component>
     <button
       @click="toggleMenu"
       class="cursor-pointer p-4 -m-4 bg-red to-underlined"
