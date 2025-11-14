@@ -8,10 +8,11 @@ const carouselConfig = {
   gap: props.blok.gap ? 24 : false
 }
 
+const route = useRoute()
 const version = useEnvironment()
 const storyblokApi = useStoryblokApi()
 const { data: projects } = await useAsyncData(
-  'projects_' + props.blok._uid,
+  'projects_' + props.blok._uid + '_' + route.path,
   async () => {
     if (!props.blok.prepopulate_with) {
       return []
@@ -23,6 +24,7 @@ const { data: projects } = await useAsyncData(
       starts_with: `proyectos/`,
       sort_by: 'sort_by_date:desc,content.name:asc',
       is_startpage: false,
+      excluding_slugs: route.path.replace(/^\//, ''),
       per_page: 8
     })
   }

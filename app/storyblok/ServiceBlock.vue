@@ -36,14 +36,17 @@ const toggleDescription = (desc, uid) => {
             {{ blok.title }}
           </button>
         </h2>
-        <UtilsRichText
-          v-if="description"
-          :content="description"
-          :class="[
-            'font-light text-base',
-            { 'hidden md:block': descriptionFor !== blok._uid }
-          ]"
-        />
+        <Transition name="fade" mode="out-in">
+          <UtilsRichText
+            v-if="description"
+            :key="descriptionFor"
+            :content="description"
+            :class="[
+              'font-light text-base',
+              { 'hidden md:block': descriptionFor !== blok._uid }
+            ]"
+          />
+        </Transition>
       </div>
     </div>
     <div>
@@ -61,11 +64,13 @@ const toggleDescription = (desc, uid) => {
             {{ service.title }}
           </button>
           
-          <UtilsRichText
-            v-if="description && descriptionFor === service._uid"
-            :content="description"
-            class="md:hidden"
-          />
+          <Transition name="fade">
+            <UtilsRichText
+              v-if="description && descriptionFor === service._uid"
+              :content="description"
+              class="md:hidden"
+            />
+          </Transition>
         </li>
       </ul>
     </div>
