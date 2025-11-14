@@ -34,4 +34,14 @@
     --color-selection-background: var(--color-white);
     --color-selection-foreground: var(--color-black);
   }
+
+  .spacing {
+    padding-block-start: var(--pt);
+    padding-block-end: var(--pb);
+
+    @media (min-width: 46rem) {
+      padding-block-start: var(--pt-md, var(--pt));
+      padding-block-end: var(--pb-md, var(--pb));
+    }
+  }
 }

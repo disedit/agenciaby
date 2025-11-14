@@ -6,18 +6,23 @@ defineProps({ blok: Object })
   <section
     v-editable="blok"
     :class="[
-      'grid',
+      'grid spacing',
       {
-        'grid-cols-1': blok.columns === '1',
-        'grid-cols-2': blok.columns === '2',
-        'grid-cols-3': blok.columns === '3',
-        'gap-6': blok.gap,
-        'px-site my-22': blok.padding,
+        'md:grid-cols-2': blok.columns === '2',
+        'md:grid-cols-3': blok.columns === '3',
+        'gap-12 md:gap-6': blok.gap,
+        'px-site my-18 md:my-22': blok.padding,
         'bg-white': blok.background_color === 'white',
         'bg-gray': blok.background_color === 'gray',
         'bg-black text-white': blok.background_color === 'black',
       }
     ]"
+    :style="{
+      '--pt': blok.padding_top,
+      '--pb': blok.padding_bottom,
+      '--pt-md': blok.padding_top_desktop,
+      '--pb-md': blok.padding_bottom_desktop
+    }"
   >
     <StoryblokComponent
       v-for="component in blok.blocks"
