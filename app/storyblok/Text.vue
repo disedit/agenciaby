@@ -34,18 +34,22 @@ defineProps({ blok: Object })
         'leading-normal': blok.leading === 'normal',
         'leading-relaxed': blok.leading === 'relaxed',
         'leading-loose': blok.leading === 'loose',
-        'self-end': blok.align === 'end',
-        'self-center': blok.align === 'center',
-        'justify-self-end text-right': blok.justify === 'end',
-        'justify-self-center': blok.justify === 'center',
+        'md:self-end': blok.align === 'end',
+        'md:self-center': blok.align === 'center',
+        'md:justify-self-end md:text-right': blok.justify === 'end',
+        'md:justify-self-center': blok.justify === 'center',
       }
     ]"
     :style="{
       '--max-chars': blok.max_chars ? `${blok.max_chars}ch` : null,
-      '--pt': blok.padding_top,
-      '--pb': blok.padding_bottom,
-      '--pt-md': blok.padding_top_desktop,
-      '--pb-md': blok.padding_bottom_desktop
+      '--pt': blok.padding_top  || 0,
+      '--pb': blok.padding_bottom  || 0,
+      '--pt-md': blok.padding_top_desktop  || 0,
+      '--pb-md': blok.padding_bottom_desktop || 0,
+      '--mt': blok.margin_top || 0,
+      '--mb': blok.margin_bottom || 0,
+      '--mt-md': blok.margin_top_desktop || 0,
+      '--mb-md': blok.margin_bottom_desktop || 0
     }"
   />
 </template>

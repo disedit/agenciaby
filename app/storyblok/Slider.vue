@@ -3,9 +3,14 @@ import { Carousel, Slide } from 'vue3-carousel'
 const props = defineProps({ blok: Object })
 
 const carouselConfig = {
-  itemsToShow: 'auto',
-  snapAlign: 'start',
-  gap: props.blok.gap ? 24 : false
+  enabled: false,
+  breakpoints: {
+    750: {
+      itemsToShow: 'auto',
+      gap: props.blok.gap ? 24 : false,
+      enabled: true
+    }
+  }
 }
 
 const route = useRoute()
@@ -55,3 +60,22 @@ const items = computed(() => {
     </Carousel>
   </ClientOnly>
 </template>
+
+<style>
+.carousel.is-disabled {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+
+  .carousel__item {
+    display: none;
+  }
+
+  .carousel__item:first-child,
+  .carousel__item:nth-child(2),
+  .carousel__item:nth-child(3),
+  .carousel__item:nth-child(4) {
+    display: flex;
+  }
+}
+</style>

@@ -28,10 +28,14 @@ const hTag = computed(() => `h${props.blok.h_level}`)
       }
     ]"
     :style="{
-      '--pt': blok.padding_top,
-      '--pb': blok.padding_bottom,
-      '--pt-md': blok.padding_top_desktop,
-      '--pb-md': blok.padding_bottom_desktop
+      '--pt': blok.padding_top  || 0,
+      '--pb': blok.padding_bottom  || 0,
+      '--pt-md': blok.padding_top_desktop  || 0,
+      '--pb-md': blok.padding_bottom_desktop || 0,
+      '--mt': blok.margin_top || 0,
+      '--mb': blok.margin_bottom || 0,
+      '--mt-md': blok.margin_top_desktop || 0,
+      '--mb-md': blok.margin_bottom_desktop || 0
     }"
   >
     {{ blok.headline }}

@@ -7,7 +7,11 @@
   .prose a:hover {
     text-decoration: underline;
     text-underline-offset: 0.25em;
-    text-decoration-thickness: 1.5px;
+    text-decoration-thickness: 1px;
+
+    @media (min-width: 46rem) {
+      text-decoration-thickness: 1.5px;
+    }
   }
 
   .links-underlined a:hover {
@@ -38,10 +42,14 @@
   .spacing {
     padding-block-start: var(--pt);
     padding-block-end: var(--pb);
+    margin-block-start: var(--mt);
+    margin-block-end: var(--mb);
 
     @media (min-width: 46rem) {
       padding-block-start: var(--pt-md, var(--pt));
       padding-block-end: var(--pb-md, var(--pb));
+      margin-block-start: var(--mt-md, var(--mt));
+      margin-block-end: var(--mb-md, var(--mb));
     }
   }
 }

@@ -17,16 +17,16 @@ const toggleDescription = (desc, uid) => {
 </script>
 
 <template>
-  <article v-editable="blok" class="border-t border-gray-border grid md:grid-cols-2 gap-6 py-site">
+  <article v-editable="blok" class="border-t border-gray-border grid md:grid-cols-2 gap-3 md:gap-6 py-site">
     <div class="flex gap-site">
-      <div>
+      <div class="shrink-0">
         {{ blok.letter }}
       </div>
       <div>
-        <h2 class="mb-6">
+        <h2 class="md:mb-6 max-w-[30vw] md:max-w-auto">
           <button
             :class="[
-              'cursor-pointer to-underlined',
+              'cursor-pointer to-underlined text-left',
               {
                 'underlined': descriptionFor === blok._uid
               }
@@ -42,7 +42,7 @@ const toggleDescription = (desc, uid) => {
             :key="descriptionFor"
             :content="description"
             :class="[
-              'font-light text-base',
+              'font-light text-sm md:text-base pt-2 md:pt-0',
               { 'hidden md:block': descriptionFor !== blok._uid }
             ]"
           />
@@ -54,7 +54,7 @@ const toggleDescription = (desc, uid) => {
         <li v-for="service in blok.services" :key="service._uid">
           <button
             :class="[
-              'cursor-pointer to-underlined',
+              'cursor-pointer to-underlined ms-[50vw] md:ms-0',
               {
                 'underlined': descriptionFor === service._uid
               }
@@ -68,7 +68,7 @@ const toggleDescription = (desc, uid) => {
             <UtilsRichText
               v-if="description && descriptionFor === service._uid"
               :content="description"
-              class="md:hidden"
+              class="md:hidden font-light text-sm md:text-base py-4 md:py-0 ps-12 md:ps-0"
             />
           </Transition>
         </li>
