@@ -5,6 +5,14 @@ const props = defineProps({ blok: Object })
 <template>
   <div
     v-editable="blok"
-    class="empty-space"
+    :class="[
+      'empty-space',
+      {
+        'block': blok.mobile,
+        'md:block': blok.desktop,
+        'hidden': !blok.mobile,
+        'md:hidden': !blok.desktop
+      }
+    ]"
   />
 </template>

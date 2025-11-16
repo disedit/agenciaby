@@ -8,7 +8,8 @@ const carouselConfig = {
     750: {
       itemsToShow: 'auto',
       gap: props.blok.gap ? 24 : false,
-      enabled: true
+      enabled: true,
+      snapAlign: 'start',
     }
   }
 }

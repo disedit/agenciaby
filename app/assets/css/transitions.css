@@ -1,14 +1,39 @@
 .fade-enter-active,
 .fade-leave-active {
   transition: .2s ease;
+  overflow: clip;
+  interpolate-size: allow-keywords;
+  height: auto;
 }
 
 .fade-enter-from {
   opacity: 0;
-  transform: translateY(.25rem);
+  height: 0;
 }
 
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(-.25rem);
+  height: 0;
+}
+
+@media (min-width: 46rem) {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: .2s ease;
+    overflow: clip;
+    interpolate-size: allow-keywords;
+    height: auto;
+  }
+
+  .fade-enter-from {
+    opacity: 0;
+    transform: translateY(.25rem);
+    height: auto;
+  }
+
+  .fade-leave-to {
+    opacity: 0;
+    transform: translateY(-.25rem);
+    height: auto;
+  }
 }
