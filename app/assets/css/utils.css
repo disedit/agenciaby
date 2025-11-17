@@ -9,7 +9,7 @@
     text-underline-offset: 0.25em;
     text-decoration-thickness: 1px;
 
-    @media (min-width: 46rem) {
+    @media (width >= 48rem) {
       text-decoration-thickness: 1.5px;
     }
   }
@@ -29,6 +29,13 @@
     align-self: auto;
   }
 
+  .column .md\:self-end {
+    @media (width >= 48rem) {
+      margin-block-start: auto;
+      align-self: auto;
+    }
+  }
+
   .focus-dark {
     --color-focus-background: var(--color-white);
     --color-focus-foreground: var(--color-black);
@@ -45,7 +52,7 @@
     margin-block-start: var(--mt);
     margin-block-end: var(--mb);
 
-    @media (min-width: 46rem) {
+    @media (width >= 48rem) {
       padding-block-start: var(--pt-md, var(--pt));
       padding-block-end: var(--pb-md, var(--pb));
       margin-block-start: var(--mt-md, var(--mt));

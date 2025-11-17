@@ -16,7 +16,7 @@
   height: 0;
 }
 
-@media (min-width: 46rem) {
+@media (width >= 48rem) {
   .fade-enter-active,
   .fade-leave-active {
     transition: .2s ease;

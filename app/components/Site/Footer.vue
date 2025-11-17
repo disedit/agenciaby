@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-white px-site py-5 md:py-6 text-xs md:text-md">
+  <footer class="bg-white px-site py-5 md:py-6 text-xs md:text-md -mt-1">
     <div class="grid gap-10 md:gap-site grid-cols-2 md:grid-cols-[14rem_1fr_auto] leading-relaxed">
       <div class="text-md col-span-2 md:col-span-1">
         {{ global.footer_brand }}
@@ -16,9 +16,7 @@
           </li>
         </ul>
       </div>
-      <div class="hidden md:block">
-
-      </div>
+      <div class="hidden md:block" />
       <div>
         <ul class="flex gap-2 md:text-base links-to-underlined">
           <li v-for="(item, i) in global.bottom_links" :key="item._uid">

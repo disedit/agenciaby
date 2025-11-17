@@ -6,6 +6,7 @@ const props = defineProps<{
 
 const route = useRoute()
 const scheme = computed(() => route.path === '/' ? 'dark' : 'light')
+const fixed = computed(() => route.path === '/proyectos' || route.path === '/proyectos/')
 
 const menuOpen = ref(false)
 
@@ -24,6 +25,8 @@ const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'di
       {
         'text-white': scheme === 'dark',
         'text-black': scheme === 'light',
+        'absolute': !fixed,
+        'fixed': fixed
       }
     ]">
     <NuxtLink to="/" class="to-underlined">

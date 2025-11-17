@@ -16,7 +16,7 @@ defineProps({ blok: Object })
         'text-xl': blok.text_size === 'xl',
         'text-2xl': blok.text_size === '2xl',
         'text-3xl': blok.text_size === '3xl',
-        'md:text-sm': blok.text_size === 'sm',
+        'md:text-sm': blok.text_size_desktop === 'sm',
         'md:text-base': blok.text_size_desktop === 'base',
         'md:text-md': blok.text_size_desktop === 'md',
         'md:text-lg': blok.text_size_desktop === 'lg',

@@ -50,7 +50,7 @@ const toggleDescription = (desc, uid) => {
       </div>
     </div>
     <div>
-      <ul>
+      <ul class="md:leading-relaxed">
         <li v-for="service in blok.services" :key="service._uid">
           <button
             :class="[

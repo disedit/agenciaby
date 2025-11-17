@@ -13,7 +13,7 @@
   --text-xxs: 0.625rem;
   --text-xs: clamp(0.6rem, 0.06vi + 0.58rem, 0.63rem);
   --text-sm: clamp(0.85rem, 0.22vi + 0.78rem, 0.88rem);
-  --text-base: clamp(0.94rem, 0.33vi + 0.84rem, 1.12rem);
+  --text-base: clamp(0.94rem, 0.33vi + 0.84rem, 1.14rem);
   --text-bmx: clamp(1.1rem, 0.48vi + 0.9rem, 1.32rem);
   --text-md: clamp(1.16rem, 0.54vi + .95rem, 1.4rem);
   --text-lg: clamp(1.46rem, 0.97vi + 1.22rem, 2rem);
@@ -46,7 +46,7 @@
   --color-stone-*: initial;
 }
 
-@media (max-width: 640px) {
+@media (width < 48rem) {
   :root {
       --text-xs: 0.6875rem;
       --text-sm: 0.75rem;

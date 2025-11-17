@@ -68,7 +68,7 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
   }
 }
 
-@media (max-width: 46rem) {
+@media (width < 48rem) {
   .project-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
