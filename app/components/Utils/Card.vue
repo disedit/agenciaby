@@ -23,7 +23,7 @@ const tag = computed(() => props.card.link ? resolveComponent('NuxtLink') : 'art
     />
     <h3
       v-if="card.heading"
-      class="text-sm md:text-bmx leading-[1.1] mt-2 md:mt-0"
+      class="text-sm md:text-bmx leading-[1.1] mt-1 md:mt-0"
     >
       {{ card.heading }}
     </h3>

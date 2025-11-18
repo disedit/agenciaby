@@ -26,7 +26,7 @@ const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'di
         'text-white': scheme === 'dark',
         'text-black': scheme === 'light',
         'absolute': !fixed,
-        'fixed': fixed
+        'fixed md:absolute': fixed
       }
     ]">
     <NuxtLink to="/" class="to-underlined">
