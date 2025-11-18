@@ -11,7 +11,7 @@ const { internalLink } = useLinks()
 <template>
   <ClientOnly>
     <NuxtLink :to="internalLink(blok.link)">
-      <Vue3Marquee v-editable="blok" clone :duration="blok.duration ? parseInt(blok.duration) : 20" class="text-sm md:text-base overflow-clip">
+      <Vue3Marquee v-editable="blok" clone :duration="blok.duration ? parseInt(blok.duration) : 20" class="text-sm md:text-basemd overflow-clip">
         <div v-for="text in items" class="whitespace-pre-wrap me-32">
           {{ text }}
         </div>

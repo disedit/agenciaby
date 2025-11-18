@@ -91,7 +91,7 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
 
     .block-Text {
       padding-inline: var(--spacing-site);
-      padding-block: 1.5rem;
+      padding-block: 3rem;
       grid-row: 2;
     }
 

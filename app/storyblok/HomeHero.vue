@@ -22,9 +22,13 @@ const heroLoaded = ref(false)
       class="text-xxs md:text-base relative z-2"
     />
     <UtilsMedia
+      v-if="blok.background.filename"
       :media="blok.background"
       @loaded="heroLoaded = true"
-      class="absolute inset-0 z-1 opacity-25 h-full w-full object-cover"
+      :class="[
+        'absolute inset-0 z-1 h-full w-full object-cover',
+        { 'opacity-25': blok.overlay }
+      ]"
     />
   </header>
 </template>

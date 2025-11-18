@@ -7,7 +7,7 @@ const carouselConfig = {
   breakpoints: {
     750: {
       itemsToShow: 'auto',
-      gap: props.blok.gap ? 24 : false,
+      gap: props.blok.gap ? 21 : false,
       enabled: true,
       snapAlign: 'start',
     }
@@ -54,9 +54,9 @@ const items = computed(() => {
 
 <template>
   <ClientOnly>
-    <Carousel v-bind="carouselConfig" :class="{ '-mx-site': blok.edge }">
-      <Slide v-for="slide in items" :key="slide._uid" class="items-start!">
-        <StoryblokComponent :key="slide._uid" :blok="slide" />
+    <Carousel v-bind="carouselConfig" :class="['-mx-site', { 'px-site': !blok.edge }]">
+      <Slide v-for="slide in items" :key="slide._uid">
+        <StoryblokComponent :key="slide._uid" :blok="slide" :edge="blok.edge" :gap="blok.gap" />
       </Slide>
     </Carousel>
   </ClientOnly>

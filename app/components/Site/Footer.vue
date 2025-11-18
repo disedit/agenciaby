@@ -18,7 +18,7 @@
       </div>
       <div class="hidden md:block" />
       <div>
-        <ul class="flex gap-2 md:text-base links-to-underlined">
+        <ul class="flex gap-2 md:text-smbase links-to-underlined">
           <li v-for="(item, i) in global.bottom_links" :key="item._uid">
             <NuxtLink :to="internalLink(item.link)">
               {{ item.label }}
@@ -26,7 +26,7 @@
           </li>
         </ul>
       </div>
-      <div class="md:text-base text-right">
+      <div class="md:text-smbase text-right">
         {{ withYear(global.copyright) }}
       </div>
     </div>

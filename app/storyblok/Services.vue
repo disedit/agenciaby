@@ -3,7 +3,7 @@ defineProps({ blok: Object })
 </script>
 
 <template>
-  <section v-editable="blok" class="p-site pb-0 text-sm md:text-bmx">
+  <section v-editable="blok" class="p-site pb-0 text-sm md:text-basemd">
     <StoryblokComponent
       v-for="component in blok.blocks"
       :key="component._uid"

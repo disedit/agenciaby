@@ -41,7 +41,7 @@ const toggleDescription = (desc, uid) => {
             <UtilsRichText
               :content="description"
               :class="[
-                'font-light text-sm md:text-base pt-2 md:pt-0',
+                'font-light text-sm md:text-smbase pt-2 md:pt-0',
                 { 'hidden md:block': descriptionFor !== blok._uid }
               ]"
             />
