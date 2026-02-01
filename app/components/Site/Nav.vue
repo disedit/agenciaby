@@ -37,11 +37,15 @@ const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'di
     </Component>
     <button
       @click="toggleMenu"
+      @mouseenter="menuOpen = true"
       class="cursor-pointer p-4 -m-4 bg-red to-underlined"
+      aria-label="Abrir menú"
+      aria-controls="siteMenu"
+      :aria-expanded="menuOpen ? 'true' : 'false'"
     >
       MENÚ
     </button>
   </header>
-  <SiteMenu :scheme="scheme" :open="menuOpen" @close="menuOpen = false" />
+  <SiteMenu id="siteMenu" :scheme="scheme" :open="menuOpen" @close="menuOpen = false" />
   <div class="h-nav" />
 </template>
