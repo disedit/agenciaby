@@ -7,11 +7,19 @@ const props = defineProps<{
 const route = useRoute()
 const scheme = computed(() => route.path === '/' ? 'dark' : 'light')
 const fixed = computed(() => route.path === '/proyectos' || route.path === '/proyectos/')
-
+const clickable = ref(false)
 const menuOpen = ref(false)
 
 function toggleMenu() {
+  if (!clickable.value) return
   menuOpen.value = !menuOpen.value
+}
+
+function openMenu() {
+  menuOpen.value = true
+  setTimeout(() => {
+    clickable.value = true
+  }, 1000)
 }
 
 const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'div')
@@ -37,7 +45,7 @@ const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'di
     </Component>
     <button
       @click="toggleMenu"
-      @mouseenter="menuOpen = true"
+      @mouseenter="openMenu"
       class="cursor-pointer p-4 -m-4 bg-red to-underlined"
       aria-label="Abrir menú"
       aria-controls="siteMenu"

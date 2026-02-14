@@ -10,7 +10,7 @@
   --color-gray-dark: #3E3E3E;
   --color-beige: #BCBCB5;
 
-  --text-xxs: 0.625rem;
+  --text-xxs: 0.725rem;
   --text-xs: clamp(0.6rem, 0.06vi + 0.58rem, 0.63rem);
   --text-sm: clamp(0.85rem, 0.22vi + 0.78rem, 0.88rem);
   --text-smbase: clamp(0.9rem, 0.27vi + 0.8rem, 0.94rem);
@@ -49,7 +49,7 @@
 
 @media (width < 48rem) {
   :root {
-      --text-xs: 0.6875rem;
+      --text-xs: 0.725rem;
       --text-sm: 0.75rem;
       --text-smbase: 0.85rem;
       --text-base: 0.937rem;

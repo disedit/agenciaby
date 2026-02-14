@@ -5,7 +5,7 @@ defineProps({ blok: Object })
 <template>
   <section
     v-editable="blok"
-    class="grid md:grid-cols-2 px-site my-22 gap-site"
+    class="grid md:grid-cols-2 px-site my-28 gap-site"
   >
     <h2 class="text-basemd md:text-xl max-w-[30ch] font-medium md:font-normal text-balance leading-tight md:leading-none mb-6 md:mb-0">
       {{ blok.heading }}

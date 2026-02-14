@@ -4,20 +4,21 @@ defineProps({ blok: Object })
 const description = ref(null)
 const descriptionFor = ref(null)
 
-const toggleDescription = (desc, uid) => {
+const showDescription = (desc, uid) => {
+  description.value = desc
+  descriptionFor.value = uid
+}
+
+const hideDescription = (uid) => {
   if (descriptionFor.value === uid) {
     description.value = null
     descriptionFor.value = null
-    return
   }
-
-  description.value = desc
-  descriptionFor.value = uid
 }
 </script>
 
 <template>
-  <article v-editable="blok" class="border-t border-gray-border grid md:grid-cols-2 gap-3 md:gap-6 py-site">
+  <article v-editable="blok" class="border-t border-gray-border grid md:grid-cols-2 gap-3 md:gap-6 py-12">
     <div class="flex gap-site">
       <div class="shrink-0">
         {{ blok.letter }}
@@ -31,14 +32,17 @@ const toggleDescription = (desc, uid) => {
                 'underlined': descriptionFor === blok._uid
               }
             ]"
-            @click="toggleDescription(blok.description, blok._uid)"
+            @click="showDescription(blok.description, blok._uid)"
+            @mouseenter="showDescription(blok.description, blok._uid)"
+            @mouseleave="hideDescription(blok._uid)"
           >
             {{ blok.title }}
           </button>
         </h2>
         <Transition name="fade" mode="out-in">
-          <div v-if="description" :key="descriptionFor">
+          <div :key="descriptionFor">
             <UtilsRichText
+              v-if="description"
               :content="description"
               :class="[
                 'font-light text-sm md:text-smbase pt-2 md:pt-0',
@@ -50,7 +54,7 @@ const toggleDescription = (desc, uid) => {
       </div>
     </div>
     <div>
-      <ul class="md:leading-relaxed">
+      <ul class="leading-loose md:leading-relaxed">
         <li v-for="service in blok.services" :key="service._uid">
           <button
             :class="[
@@ -59,7 +63,9 @@ const toggleDescription = (desc, uid) => {
                 'underlined': descriptionFor === service._uid
               }
             ]"
-            @click="toggleDescription(service.description, service._uid)"
+            @click="showDescription(service.description, service._uid)"
+            @mouseenter="showDescription(service.description, service._uid)"
+            @mouseleave="hideDescription(service._uid)"
           >
             {{ service.title }}
           </button>
@@ -68,7 +74,7 @@ const toggleDescription = (desc, uid) => {
             <div v-if="description && descriptionFor === service._uid">
               <UtilsRichText
                 :content="description"
-                class="md:hidden font-light text-sm md:text-base py-4 md:py-0 ps-12 md:ps-0"
+                class="md:hidden md:font-light text-sm md:text-base py-4 md:py-0 ps-11 md:ps-0"
               />
             </div>
           </Transition>

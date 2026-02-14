@@ -8,7 +8,7 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
   <section
     v-editable="blok"
     :class="[
-      'project-columns flex flex-wrap md:flex-nowrap gap-1 md:gap-6 md:px-site my-1 md:my-22',
+      'project-columns flex flex-wrap md:flex-nowrap gap-1 md:gap-6 md:px-site my-1 md:my-32',
       {
         'fixed-height': blok.fixed_height,
         'has-prose': hasProse
@@ -25,7 +25,7 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
         'md:hidden': block.hasOwnProperty('desktop') && !block.desktop
       }]"
     >
-      <StoryblokComponent :blok="block" />
+      <StoryblokComponent :blok="block" :force-ratio="0.30" />
     </div>
   </section>
 </template>
@@ -33,13 +33,13 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
 <style>
 .project-columns {
   .block-Media {
-    flex-basis: 40%;
+    flex-basis: 37%;
     min-width: 0;
     flex-shrink: 0;
   }
 
   .block-EmptySpace {
-    flex-basis: 20%;
+    flex-basis: 26%;
     min-width: 0;
   }
 

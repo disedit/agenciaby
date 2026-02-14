@@ -1,7 +1,7 @@
 <template>
-  <footer class="bg-white px-site py-5 md:py-6 text-xs md:text-md -mt-1">
+  <footer class="bg-white px-site py-5 md:py-8 text-xs md:text-basemd -mt-1">
     <div class="grid gap-10 md:gap-site grid-cols-2 md:grid-cols-[14rem_1fr_auto] leading-relaxed">
-      <div class="text-md col-span-2 md:col-span-1">
+      <div class="text-basemd col-span-2 md:col-span-1">
         {{ global.footer_brand }}
       </div>
       <div class="col-span-2 md:col-span-1">
