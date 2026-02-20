@@ -41,6 +41,13 @@ onMounted(() => {
     height: '0',
     duration: 1,
     ease: 'power4.inOut',
+    onComplete: () => {
+      // Set meta theme-color
+      const themeColorMeta = document.querySelector('meta[name="theme-color"]')
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute('content', '#FFFFFF')
+      }
+    }
   })
 })
 </script>

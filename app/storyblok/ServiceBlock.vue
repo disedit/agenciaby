@@ -77,7 +77,7 @@ function hoverHideDescription(uid) {
         </Transition>
       </div>
     </div>
-    <div :class="['transition-all duration-300 ease-in-out', { '-mt-13 md:mt-0': descriptionFor !== blok._uid && blok.letter !== '[ C ]', '-mt-9 md:mt-0': descriptionFor === blok._uid || blok.letter === '[ C ]' }]">
+    <div :class="['transition-all duration-300 ease-in-out', { '-mt-13 md:mt-0': descriptionFor !== blok._uid && blok.letter !== '[ C ]', '-mt-9 md:mt-0': descriptionFor !== blok._uid && blok.letter === '[ C ]' }]">
       <ul class="flex flex-col gap-3">
         <li v-for="(service, i) in blok.services" :key="service._uid">
           <button
