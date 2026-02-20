@@ -3,16 +3,32 @@ defineProps({ blok: Object })
 
 const description = ref(null)
 const descriptionFor = ref(null)
+const clickable = ref(true)
 
 const showDescription = (desc, uid) => {
+  clickable.value = false
   description.value = desc
   descriptionFor.value = uid
+
+  setTimeout(() => {
+    clickable.value = true
+  }, 500)
 }
 
 const hideDescription = (uid) => {
   if (descriptionFor.value === uid) {
     description.value = null
     descriptionFor.value = null
+  }
+}
+
+const toggleDescription = (desc, uid) => {
+  if (!clickable.value) return
+
+  if (descriptionFor.value === uid) {
+    hideDescription(uid)
+  } else {
+    showDescription(desc, uid)
   }
 }
 </script>
@@ -32,7 +48,7 @@ const hideDescription = (uid) => {
                 'underlined': descriptionFor === blok._uid
               }
             ]"
-            @click="showDescription(blok.description, blok._uid)"
+            @click="toggleDescription(blok.description, blok._uid)"
             @mouseenter="showDescription(blok.description, blok._uid)"
             @mouseleave="hideDescription(blok._uid)"
           >
@@ -45,7 +61,7 @@ const hideDescription = (uid) => {
               v-if="description"
               :content="description"
               :class="[
-                'font-light text-sm md:text-smbase pt-2 md:pt-0',
+                'font-light text-base md:text-smbase pt-2 md:pt-0',
                 { 'hidden md:block': descriptionFor !== blok._uid }
               ]"
             />
@@ -63,7 +79,7 @@ const hideDescription = (uid) => {
                 'underlined': descriptionFor === service._uid
               }
             ]"
-            @click="showDescription(service.description, service._uid)"
+            @click="toggleDescription(service.description, service._uid)"
             @mouseenter="showDescription(service.description, service._uid)"
             @mouseleave="hideDescription(service._uid)"
           >
@@ -74,7 +90,7 @@ const hideDescription = (uid) => {
             <div v-if="description && descriptionFor === service._uid">
               <UtilsRichText
                 :content="description"
-                class="md:hidden md:font-light text-sm md:text-base py-4 md:py-0 ps-11 md:ps-0"
+                class="md:hidden md:font-light text-base md:text-base py-4 md:py-0 ps-11 md:ps-0"
               />
             </div>
           </Transition>
