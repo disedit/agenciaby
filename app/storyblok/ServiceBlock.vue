@@ -51,7 +51,7 @@ function hoverHideDescription(uid) {
         <h2 class="md:mb-6 max-w-[30vw] md:max-w-auto">
           <button
             :class="[
-              'cursor-pointer to-underlined text-left leading-[1.2] relative z-10 text-balance',
+              'cursor-pointer text-left leading-[1.2] relative z-10 text-balance',
               {
                 'underlined': descriptionFor === blok._uid
               }
@@ -82,7 +82,7 @@ function hoverHideDescription(uid) {
         <li v-for="(service, i) in blok.services" :key="service._uid">
           <button
             :class="[
-              'cursor-pointer to-underlined ms-[50vw] md:ms-0 text-left leading-[1.1] text-balance',
+              'cursor-pointer ms-[50vw] md:ms-0 text-left leading-[1.1] text-balance',
               {
                 'underlined': descriptionFor === service._uid
               }
