@@ -1,18 +1,16 @@
 <script setup>
+import { breakpointsTailwind } from '@vueuse/core'
+
 defineProps({ blok: Object })
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const description = ref(null)
 const descriptionFor = ref(null)
-const clickable = ref(true)
 
 const showDescription = (desc, uid) => {
-  clickable.value = false
   description.value = desc
   descriptionFor.value = uid
-
-  setTimeout(() => {
-    clickable.value = true
-  }, 500)
 }
 
 const hideDescription = (uid) => {
@@ -23,12 +21,22 @@ const hideDescription = (uid) => {
 }
 
 const toggleDescription = (desc, uid) => {
-  if (!clickable.value) return
-
   if (descriptionFor.value === uid) {
     hideDescription(uid)
   } else {
     showDescription(desc, uid)
+  }
+}
+
+function hoverShowDescription(desc, uid) {
+  if (breakpoints.greaterOrEqual('md').value) {
+    showDescription(desc, uid)
+  }
+}
+
+function hoverHideDescription(uid) {
+  if (breakpoints.greaterOrEqual('md').value) {
+    hideDescription(uid)
   }
 }
 </script>
@@ -43,14 +51,14 @@ const toggleDescription = (desc, uid) => {
         <h2 class="md:mb-6 max-w-[30vw] md:max-w-auto">
           <button
             :class="[
-              'cursor-pointer to-underlined text-left',
+              'cursor-pointer to-underlined text-left leading-[1.2] relative z-10 text-balance',
               {
                 'underlined': descriptionFor === blok._uid
               }
             ]"
             @click="toggleDescription(blok.description, blok._uid)"
-            @mouseenter="showDescription(blok.description, blok._uid)"
-            @mouseleave="hideDescription(blok._uid)"
+            @mouseenter="hoverShowDescription(blok.description, blok._uid)"
+            @mouseleave="hoverHideDescription(blok._uid)"
           >
             {{ blok.title }}
           </button>
@@ -69,19 +77,19 @@ const toggleDescription = (desc, uid) => {
         </Transition>
       </div>
     </div>
-    <div>
-      <ul class="leading-loose md:leading-relaxed">
-        <li v-for="service in blok.services" :key="service._uid">
+    <div :class="['transition-all duration-300 ease-in-out', { '-mt-13 md:mt-0': descriptionFor !== blok._uid && blok.letter !== '[ C ]', '-mt-9 md:mt-0': descriptionFor === blok._uid || blok.letter === '[ C ]' }]">
+      <ul class="flex flex-col gap-3">
+        <li v-for="(service, i) in blok.services" :key="service._uid">
           <button
             :class="[
-              'cursor-pointer to-underlined ms-[50vw] md:ms-0',
+              'cursor-pointer to-underlined ms-[50vw] md:ms-0 text-left leading-[1.1] text-balance',
               {
                 'underlined': descriptionFor === service._uid
               }
             ]"
             @click="toggleDescription(service.description, service._uid)"
-            @mouseenter="showDescription(service.description, service._uid)"
-            @mouseleave="hideDescription(service._uid)"
+            @mouseenter="hoverShowDescription(service.description, service._uid)"
+            @mouseleave="hoverHideDescription(service._uid)"
           >
             {{ service.title }}
           </button>
@@ -90,7 +98,7 @@ const toggleDescription = (desc, uid) => {
             <div v-if="description && descriptionFor === service._uid">
               <UtilsRichText
                 :content="description"
-                class="md:hidden md:font-light text-base md:text-base py-4 md:py-0 ps-11 md:ps-0"
+                :class="['md:hidden md:font-light text-base md:text-base pb-4 md:py-0 ps-12 md:ps-0', { 'pt-8': i === 0, 'pt-3': i !== 0 }]"
               />
             </div>
           </Transition>

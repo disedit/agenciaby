@@ -3,7 +3,7 @@
   transition: .2s ease;
   overflow: clip;
   interpolate-size: allow-keywords;
-  height: auto;
+  max-height: 40vh;
 }
 
 .fade-enter-from {
