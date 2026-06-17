@@ -25,7 +25,7 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
         'md:hidden': block.hasOwnProperty('desktop') && !block.desktop
       }]"
     >
-      <StoryblokComponent :blok="block" :force-ratio="0.30" />
+      <StoryblokComponent :blok="block" :force-ratio="0.75" />
     </div>
   </section>
 </template>
