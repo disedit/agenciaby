@@ -60,7 +60,7 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
   }
 
   &.fixed-height .block-Media img {
-    aspect-ratio: .8;
+    aspect-ratio: .75;
   }
 
   & > div:nth-child(4) {
