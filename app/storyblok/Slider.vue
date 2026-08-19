@@ -1,18 +1,5 @@
 <script setup>
-import { Carousel, Slide } from 'vue3-carousel'
 const props = defineProps({ blok: Object })
-
-const carouselConfig = {
-  enabled: false,
-  breakpoints: {
-    750: {
-      itemsToShow: 'auto',
-      gap: props.blok.gap ? 21 : false,
-      enabled: true,
-      snapAlign: 'start',
-    }
-  }
-}
 
 const route = useRoute()
 const version = useEnvironment()
@@ -54,29 +41,62 @@ const items = computed(() => {
 
 <template>
   <ClientOnly>
-    <Carousel v-bind="carouselConfig" :class="['-mx-site', { 'px-site': !blok.edge }]">
-      <Slide v-for="slide in items" :key="slide._uid">
-        <StoryblokComponent :key="slide._uid" :blok="slide" :edge="blok.edge" :gap="blok.gap" />
-      </Slide>
-    </Carousel>
+    <div :class="['slider -mx-site', { 'px-site': !blok.edge }]" :style="{ '--gap': blok.gap ? '20px' : '0' }">
+      <div class="slider__track">
+        <div v-for="slide in items" :key="slide._uid" class="slider__item">
+          <StoryblokComponent :key="slide._uid" :blok="slide" :edge="blok.edge" :gap="blok.gap" />
+        </div>
+      </div>
+    </div>
   </ClientOnly>
 </template>
 
 <style>
-.carousel.is-disabled {
+.slider__track {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: .5rem;
+}
 
-  .carousel__item {
-    display: none;
+.slider__item {
+  display: none;
+}
+
+.slider__item:nth-child(-n+4) {
+  display: block;
+}
+
+.slider__item > * {
+  height: 100%;
+}
+
+@media (min-width: 750px) {
+  .slider.px-site {
+    --edges: calc(var(--spacing-site) * 2);
   }
 
-  .carousel__item:first-child,
-  .carousel__item:nth-child(2),
-  .carousel__item:nth-child(3),
-  .carousel__item:nth-child(4) {
+  .slider__track {
     display: flex;
+    gap: var(--gap);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0;
+  }
+
+  .slider__item {
+    display: block;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: calc(25vw - (var(--gap) * 3 / 4) - (var(--edges, 0) / 4));
+  }
+
+  .slider__track {
+    scrollbar-width: thin;
+  }
+
+  .slider__track::-webkit-scrollbar {
+    height: 8px;
   }
 }
 </style>

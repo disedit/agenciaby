@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import 'vue3-carousel/carousel.css';
 
 @theme {
   --font-sans: Pretendard, sans-serif;
