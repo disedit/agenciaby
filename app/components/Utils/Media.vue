@@ -13,7 +13,10 @@ const isVideo = props.media.filename.endsWith('mp4')
   <video
     v-if="isVideo"
     :src="media.filename"
-    playsinline muted autoplay loop
+    playsinline
+    muted
+    autoplay
+    loop
     class="block"
     @loadeddata="emit('loaded')" />
   <NuxtImg

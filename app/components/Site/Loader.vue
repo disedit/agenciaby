@@ -2,7 +2,7 @@
   <div ref="curtainRef" class="fixed z-1000 overflow-clip inset-0">
     <div class="bg-beige min-h-dvh flex gap-4 justify-center items-center">
       <div class="text-base">
-        AGENCIA BÝ
+        MANS
       </div>
       <div class="w-16 bg-[#A9ACAA]">
         <div ref="loadingBarRef" class="loading-bar" />

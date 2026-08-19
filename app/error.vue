@@ -7,7 +7,7 @@ const props = defineProps({
 <template>
   <div class="p-site h-dvh flex flex-col font-sans text-base md:text-md gap-site">
     <NuxtLink to="/" class="to-underlined">
-      BÝ
+      MANS
     </NuxtLink>
     <div class="text-3xl leading-[1] uppercase">
       <div>{{ error.statusCode }}</div>

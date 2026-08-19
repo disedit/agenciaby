@@ -38,7 +38,7 @@ const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'di
       }
     ]">
     <NuxtLink to="/" class="to-underlined">
-      BÝ
+      MANS
     </NuxtLink>
     <Component :is="topTag" :to="topLink" class="absolute left-[50%] -translate-x-[50%] md:translate-x-0 md:static">
       {{ topMessage }}

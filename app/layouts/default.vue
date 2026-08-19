@@ -4,7 +4,7 @@ useHead({
   meta: [
     { name: 'theme-color', content: '#f1f0eb' },
     { name: 'msapplication-TileColor', content: '#f1f0eb' },
-    { name: 'apple-mobile-web-app-title', content: 'Agencia By' }
+    { name: 'apple-mobile-web-app-title', content: 'Mans' }
   ],
   link: [
     { rel: 'icon', type: 'image/png', href: '/favicons/favicon-96x96.png', sizes: '96x96' },

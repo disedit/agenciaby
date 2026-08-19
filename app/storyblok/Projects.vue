@@ -2,6 +2,16 @@
 const props = defineProps({ blok: Object })
 
 const { internalLink } = useLinks()
+
+const listOrDescriptionHtml = (project) => {
+  if (project.list) {
+    const list = project.list.split('\n').map(item => item.trim()).filter(item => item.length > 0)
+    console.log(list)
+    return `<ul>${list.map(item => `<li>${item}</li>`).join('')}</ul>`
+  } else {
+    return project.description || ''
+  }
+}
 </script>
 
 <template>
@@ -18,9 +28,7 @@ const { internalLink } = useLinks()
       <NuxtLink :to="internalLink(project.link)" :class="['grid min-h-dvh', {'text-white': project.text_color === 'white', 'text-black': project.text_color === 'black'}]">
         <div class="fixed inset-0 z-20 grid grid-rows-2 w-[50vw] p-site ps-0 ms-auto items-end">
           <h2 class="text-md leading-none">{{ project.heading }}</h2>
-          <div class="text-sm">
-            {{ project.list || project.description }}
-          </div>
+          <div class="text-sm" v-html="listOrDescriptionHtml(project)" />
         </div>
         <UtilsMedia
           :media="project.media"
