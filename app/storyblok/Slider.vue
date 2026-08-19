@@ -56,6 +56,7 @@ const items = computed(() => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: .5rem;
+  scroll-padding-inline: calc(var(--edges, 0) / 2);
 }
 
 .slider__item {
@@ -75,6 +76,11 @@ const items = computed(() => {
     --edges: calc(var(--spacing-site) * 2);
   }
 
+  .slider {
+    box-sizing: border-box;
+    padding-inline: calc(var(--edges, 0) / 2);
+  }
+
   .slider__track {
     display: flex;
     gap: var(--gap);
@@ -82,17 +88,16 @@ const items = computed(() => {
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     padding: 1rem 0;
+    /* ensure snaps align with the visible area when there's a scrollbar */
+    scroll-padding-inline: calc(var(--edges, 0) / 2);
+    scrollbar-width: thin;
   }
 
   .slider__item {
     display: block;
-    flex: 0 0 auto;
+    flex: 0 0 calc((100% - (var(--gap) * 3)) / 4);
+    box-sizing: border-box;
     scroll-snap-align: start;
-    width: calc(25vw - (var(--gap) * 3 / 4) - (var(--edges, 0) / 4));
-  }
-
-  .slider__track {
-    scrollbar-width: thin;
   }
 
   .slider__track::-webkit-scrollbar {

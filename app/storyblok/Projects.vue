@@ -31,7 +31,7 @@ const listOrDescriptionHtml = (project) => {
         </div>
         <UtilsMedia
           :media="project.media"
-          class="fixed inset-0 h-full"
+          class="fixed inset-0 h-full w-full"
         />
       </NuxtLink>
     </li>
