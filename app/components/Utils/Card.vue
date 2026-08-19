@@ -44,7 +44,7 @@ const tag = computed(() => props.card.link ? resolveComponent('NuxtLink') : 'art
     </div>
     <h3
       v-if="card.heading"
-      class="text-sm md:text-basemd leading-[1.1] my-[0.65rem] md:my-1.5"
+      class="text-sm md:text-basemd leading-[1.1] my-[0.65rem] md:my-1.5 md:max-w-[20vw]"
     >
       {{ card.heading }}
     </h3>

@@ -6,7 +6,6 @@ const { internalLink } = useLinks()
 const listOrDescriptionHtml = (project) => {
   if (project.list) {
     const list = project.list.split('\n').map(item => item.trim()).filter(item => item.length > 0)
-    console.log(list)
     return `<ul>${list.map(item => `<li>${item}</li>`).join('')}</ul>`
   } else {
     return project.description || ''
