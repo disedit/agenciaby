@@ -9,7 +9,7 @@ const hTag = computed(() => `h${props.blok.h_level}`)
     v-editable="blok"
     :is="hTag"
     :class="[
-      'whitespace-break-spaces spacing',
+      'whitespace-break-spaces spacing text-balance',
       {
         'text-sm': blok.text_size === 'sm',
         'text-smbase': blok.text_size === 'smbase',

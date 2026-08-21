@@ -11,7 +11,8 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
       'project-columns flex flex-wrap md:flex-nowrap gap-1 md:gap-6 md:px-site my-1 md:my-32',
       {
         'fixed-height': blok.fixed_height,
-        'has-prose': hasProse
+        'has-prose': hasProse,
+        'mobile-fullwidth': blok.mobile_fullwidth
       }
     ]"
   >
@@ -78,7 +79,8 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
     }
   }
 
-  .project-columns.has-prose {
+  .project-columns.has-prose,
+  .project-columns.mobile-fullwidth {
     grid-template-columns: 1fr;
 
     &.fixed-height .block-Media img {
