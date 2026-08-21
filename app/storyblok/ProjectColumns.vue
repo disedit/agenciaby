@@ -79,8 +79,15 @@ const hasProse = computed(() => props.blok.blocks.filter(block => block.componen
     }
   }
 
-  .project-columns.has-prose,
   .project-columns.mobile-fullwidth {
+    grid-template-columns: 1fr;
+
+    .block-EmptySpace {
+      display: none !important;
+    }
+  }
+
+  .project-columns.has-prose {
     grid-template-columns: 1fr;
 
     &.fixed-height .block-Media img {
