@@ -63,7 +63,6 @@ const onLeaveCancelled = () => {
   >
     <div
       v-if="open"
-      @click="$emit('close')"
       :class="[
         'fixed inset-0 z-100 backdrop-blur-none',
         'flex flex-col items-end justify-center px-site pt-nav pb-6 text-right text-base',
@@ -72,6 +71,7 @@ const onLeaveCancelled = () => {
           'bg-gray/50 text-black': scheme === 'light',
         }
       ]"
+      @click="$emit('close')"
     >
       <ul aria-label="Menú">
         <li

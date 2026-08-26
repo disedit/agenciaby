@@ -44,12 +44,12 @@ const topTag = computed(() => props.topLink ? resolveComponent('NuxtLink') : 'di
       {{ topMessage }}
     </Component>
     <button
-      @click="toggleMenu"
-      @mouseenter="openMenu"
       class="cursor-pointer p-4 -m-4 bg-red to-underlined"
       aria-label="Abrir menú"
       aria-controls="siteMenu"
       :aria-expanded="menuOpen ? 'true' : 'false'"
+      @click="toggleMenu"
+      @mouseenter="openMenu"
     >
       MENÚ
     </button>

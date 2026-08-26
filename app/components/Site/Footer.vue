@@ -9,7 +9,7 @@
       </div>
       <div class="col-span-2 md:col-span-1 md:text-right links-to-underlined">
         <ul>
-          <li v-for="(item, i) in global.links" :key="item._uid">
+          <li v-for="item in global.links" :key="item._uid">
             <NuxtLink :to="internalLink(item.link)">
               {{ item.label }}
             </NuxtLink>
@@ -19,7 +19,7 @@
       <div class="hidden md:block" />
       <div>
         <ul class="flex gap-2 md:text-smbase links-to-underlined">
-          <li v-for="(item, i) in global.bottom_links" :key="item._uid">
+          <li v-for="item in global.bottom_links" :key="item._uid">
             <NuxtLink :to="internalLink(item.link)">
               {{ item.label }}
             </NuxtLink>

@@ -3,7 +3,8 @@ const props = defineProps({ blok: Object })
 </script>
 
 <template>
-  <div :class="{
+  <div
+:class="{
     'block': blok.mobile,
     'md:block': blok.desktop,
     'hidden': !blok.mobile,

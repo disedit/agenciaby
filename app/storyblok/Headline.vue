@@ -6,8 +6,8 @@ const hTag = computed(() => `h${props.blok.h_level}`)
 
 <template>
   <Component
-    v-editable="blok"
     :is="hTag"
+    v-editable="blok"
     :class="[
       'whitespace-break-spaces spacing text-balance',
       {

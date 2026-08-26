@@ -24,11 +24,11 @@ const heroLoaded = ref(false)
     <UtilsMedia
       v-if="blok.background.filename"
       :media="blok.background"
-      @loaded="heroLoaded = true"
       :class="[
         'absolute inset-0 z-1 h-full w-full object-cover',
         { 'opacity-25': blok.overlay }
       ]"
+      @loaded="heroLoaded = true"
     />
   </header>
 </template>

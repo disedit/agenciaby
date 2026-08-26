@@ -7,8 +7,8 @@ const linkTag = computed(() => props.blok.link ? resolveComponent('NuxtLink') : 
 
 <template>
   <Component
-    v-editable="blok"
     :is="hTag"
+    v-editable="blok"
     class="text-sm md:text-md font-light mb-4 mt-8"
   >
     <Component
