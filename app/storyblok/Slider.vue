@@ -15,7 +15,7 @@ const { data: projects } = await useAsyncData(
       version,
       excluding_fields: 'body',
       starts_with: `proyectos/`,
-      sort_by: propos.blok.sort_by || 'position:asc,sort_by_date:desc,first_published_at:desc',
+      sort_by: props.blok.sort_by || 'position:asc,sort_by_date:desc,first_published_at:desc',
       is_startpage: false,
       excluding_slugs: route.path.replace(/^\//, ''),
       per_page: 8
