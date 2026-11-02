@@ -14,6 +14,7 @@ const tag = computed(() => props.card.link ? resolveComponent('NuxtLink') : 'art
       <UtilsMedia
         v-if="card.media?.filename"
         :media="card.media"
+        sizes="xs:100vw sm:100vw md:25vw lg:25vw xl:25vw 2xl:25vw"
         :class="[
           'object-cover w-full',
           {
@@ -29,6 +30,7 @@ const tag = computed(() => props.card.link ? resolveComponent('NuxtLink') : 'art
       <UtilsMedia
         v-if="card.media_hover?.filename"
         :media="card.media_hover"
+        sizes="xs:100vw sm:100vw md:25vw lg:25vw xl:25vw 2xl:25vw"
         :class="[
           'absolute group-hover:opacity-100 inset-0 opacity-0 object-cover w-full transition duration-300 ease-in-out',
           {

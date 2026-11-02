@@ -24,6 +24,8 @@ const heroLoaded = ref(false)
     <UtilsMedia
       v-if="blok.background.filename"
       :media="blok.background"
+      preload
+      sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
       :class="[
         'absolute inset-0 z-1 h-full w-full object-cover',
         { 'opacity-25': blok.overlay }

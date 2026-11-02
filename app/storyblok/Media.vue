@@ -6,6 +6,7 @@ defineProps({ blok: Object, forceRatio: Number })
   <UtilsMedia
     v-editable="blok"
     :media="blok.media"
+    sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
     :class="[
       'media w-full',
       {
